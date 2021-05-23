@@ -1,0 +1,221 @@
+<!DOCTYPE html> 
+<html> 
+
+<head> 
+	<title>FILE UPLOAD</title> 
+</head> 
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,300;1,400;1,500;1,700&display=swap');
+  body {
+ 
+    font-family: 'Poppins', sans-serif;
+  background-color:#d0d1de;
+ 
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.file-header h1{
+  margin: 0;
+    font-size: 30px;
+    text-align: left;
+    line-height: 30px;
+}
+.card-fileupload{
+  width: 90%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    background-color: #FFF;
+    border-radius: .5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 32px;
+}
+.file-header {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: start;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    /* padding: 1.5rem 1.5rem 1rem; */
+}
+
+.logo-circle {
+    width: 3.5rem;
+    height: 3.5rem;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #e9e5ff;
+}
+.logo-circle svg {
+    max-width: 1.5rem;
+}
+.file-title{
+  font-weight: 500;
+}
+upload-area {
+  margin-top: 1.25rem;
+  border: none;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23ccc' stroke-width='3' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  background-color: transparent;
+  padding: 3rem;
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+}
+.upload-area:hover, .upload-area:focus {
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%232e44ff' stroke-width='3' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+}
+
+.upload-area-icon {
+  display: block;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+.upload-area-icon svg {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.upload-area-title {
+  margin-top: 1rem;
+  display: block;
+  font-weight: 700;
+  color: #0d0f21;
+}
+
+.upload-area-description {
+  display: block;
+  color: #6a6b76;
+}
+.upload-area-description strong {
+  color: #2e44ff;
+  font-weight: 700;
+}
+.inputbutton {
+  margin-top: 1.25rem;
+    border: none;
+    background-color: #f5f6ff;
+    padding: 3rem;
+    width: 100%;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    border: 2px solid #2e44ff;
+    text-align: center;
+    border-radius: 6px;
+    position: relative;
+
+}
+
+.inputbutton .inputfilebtn{
+  position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+.submitfile{
+  color: #FFF;
+    background-color: #2e44ff;
+    padding: .8rem 1.5rem;
+    font-weight: 500;
+    border: 0px;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    margin-top: 32px;
+    cursor: pointer;
+}
+#submitfiledivid{
+    text-align:center;
+    display:none;
+}
+.file-description{
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+</style>
+<body> 
+  <div class="card-fileupload">
+    <div class="file-header">
+		<div class="file-logo">
+			<span class="logo-circle">
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="419.116" viewBox="0 0 512 419.116">
+					<defs>
+						<clipPath id="clip-folder-new">
+							<rect width="512" height="419.116"></rect>
+						</clipPath>
+					</defs>
+					<g id="folder-new" clip-path="url(#clip-folder-new)">
+						<path id="Union_1" fill="#2e44ff" data-name="Union 1" d="M16.991,419.116A16.989,16.989,0,0,1,0,402.125V16.991A16.989,16.989,0,0,1,16.991,0H146.124a17,17,0,0,1,10.342,3.513L227.217,57.77H437.805A16.989,16.989,0,0,1,454.8,74.761v53.244h40.213A16.992,16.992,0,0,1,511.6,148.657L454.966,405.222a17,17,0,0,1-16.6,13.332H410.053v.562ZM63.06,384.573H424.722L473.86,161.988H112.2Z" fill="var(--c-action-primary)" stroke="" stroke-width="1"></path>
+					</g>
+				</svg>
+			</span>
+		</div>
+    <h1>Order Status File Upload
+
+      <p class="file-description">Upload Excel File</p>
+    </h1>
+  
+  </div>
+  
+   <div>
+    
+
+   </div>
+
+    <form action="/v1/getOrdersDocument"
+    enctype="multipart/form-data" method="POST"> 
+      <div class="inputbutton">
+        <input type="file" class="inputfilebtn" name="orderExcel" required/>
+		<span class="custom-file-label"></span>
+        <span class="upload-area-title">Drag an excel file here to upload.</span>
+        <span class="upload-area-description">
+          Alternatively, you can select a file by <br/><strong>clicking here</strong>
+        </span>
+      </div>
+      <div id="submitfiledivid">
+      <input type="submit" class="submitfile" value="submit">
+      </div> 
+    </form> 
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script>
+            $('.inputfilebtn').on('change',function(){
+                //get the file name
+                //var fileName = $(this).val();
+                //replace the "Choose a file" label
+                
+                // var i = $(this).prev('label').clone();
+                var fileName = $(this)[0].files[0].name;
+                $(this).next('.custom-file-label').text(fileName);
+				$("#submitfiledivid").show();
+
+            })
+    </script>
+</body> 
+
+</html>
